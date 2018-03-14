@@ -1,0 +1,58 @@
+<div class="row">
+    <div class="col-sm-2 col-2">
+        <app-e-nav></app-e-nav>
+    </div>
+    
+    <div class="col-sm-8 col-10" >
+        <br><br>
+        <div class="jumbotron">
+            <h2>Submit a new Reimbursement Ticket</h2>
+            <br><br>
+            <form>
+                <!-- Amount -->
+                <label for="amount">Amount</label>
+                <div id="amount" class="input-group">
+                    <span class="input-group-addon glyphicon glyphicon-usd"></span>
+                    <input [(ngModel)]="amount" name="amount" type="number" class="form-control" id="amount" placeholder="500.0">
+                </div>
+                <br><br>
+                <!-- Description -->
+                <div class="form-group">
+                    <label for="decription">Description</label>
+                    <textarea [(ngModel)]="description" name="description" class="form-control" id="description" rows="3" placeholder="Description"></textarea>
+                </div>
+                <br>
+                <!-- Receipt -->
+                <div class="form-group">
+                    <label for="receipt">Receipt</label>
+                    <input [(ngModel)]="receipt" type="file" name="receipt" accept="image/*">
+                </div>
+                <br>
+                <!-- Date Submitted -->
+                <div class="form-group">
+                    <label for="date-submitted">Date Submitted</label>
+                    <div class="list-group">
+                        <a class="list-group-item disabled">Get current date</a>
+                    </div>
+                </div>
+                <br>
+                <!-- ticket type -->
+                <label for="ticket-type">Ticket Type</label>
+                
+
+                <select [(ngModel)]="types" name="type" class="ui fluid search selection dropdown"> 
+                    <option *ngFor=" of types">{{t.key}}</option>
+                </select>
+
+                <br>
+                <!-- defaulting author to user.id -->
+                <!-- defaulting resolver to null -->
+                <!-- defaulting date resovled to null -->
+                <!-- submit button -->
+                <br>
+                <button (click)="sendTicket();" type="submit" class=" btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+    

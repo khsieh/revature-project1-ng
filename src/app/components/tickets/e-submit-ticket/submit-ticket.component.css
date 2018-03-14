@@ -1,0 +1,21 @@
+
+#amount{
+    width: 20%;
+}
+
+#description{
+    height: 50px;
+}
+
+#amount.input-group-addon{
+    /* margin-top: px; */
+    margin-bottom: -4px;
+    padding-top: 7%;
+}
+#amount.form-control{
+    margin-top: 1px; 
+    margin-bottom: -5px;
+}
+.glyphicon-usd:before{
+    margin-left: -7px;
+}
