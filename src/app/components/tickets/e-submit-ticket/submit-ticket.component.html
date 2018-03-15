@@ -32,16 +32,20 @@
                 <div class="form-group">
                     <label for="date-submitted">Date Submitted</label>
                     <div class="list-group">
-                        <a class="list-group-item disabled">Get current date</a>
+                        <a class="list-group-item disabled">{{curDate | date:'MM-dd-yyyy' }}</a>
                     </div>
                 </div>
                 <br>
                 <!-- ticket type -->
                 <label for="ticket-type">Ticket Type</label>
-                
-
-                <select [(ngModel)]="types" name="type" class="ui fluid search selection dropdown"> 
-                    <option *ngFor=" of types">{{t.key}}</option>
+ 
+                <select
+                    name="ticketType"
+                    [(ngModel)]="selectedType">
+                    <option [value]="1">Travel</option>
+                    <option [value]="2">Business</option>
+                    <option [value]="3">Medical</option>
+                    <option [value]="4">Other</option>
                 </select>
 
                 <br>

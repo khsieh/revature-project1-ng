@@ -37,6 +37,9 @@ import { UpdateImgService } from './services/update/ticket/update-img/update-img
 import { UpdateTicketService } from './services/update/ticket/update-ticket/update-ticket.service';
 import { MViewUserComponent } from './components/user/m-view-user/m-view-user.component';
 import { MViewTicketComponent } from './components/tickets/m-view-ticket/m-view-ticket.component';
+//Models
+import { Ticket } from './models/ticket';
+import { User } from './models/user';
 
 
 @NgModule({
@@ -74,7 +77,9 @@ import { MViewTicketComponent } from './components/tickets/m-view-ticket/m-view-
     TixStatusAndUidService,
     UpdateUserService,
     UpdateImgService,
-    UpdateTicketService
+    UpdateTicketService,
+    Ticket,
+    User
     //add guards
   ],
   bootstrap: [AppComponent]
