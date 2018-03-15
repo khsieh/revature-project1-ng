@@ -34,6 +34,7 @@ export class ViewUserComponent implements OnInit {
             resp=>{
                 // let respJson 
                 this.curUser = JSON.parse(resp.body);
+                console.log(this.curUser);
             },
             err=>{
                 console.log("Error in loading user info " + err.status );

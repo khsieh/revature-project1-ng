@@ -24,16 +24,17 @@ export class LoginComponent implements OnInit {
             resp=>{
                 // console.log(resp);
                 let respJson = JSON.parse(resp.body);
-                // console.log(respondeBody.uid);
-                // console.log(respondeBody.firstname);
                 
                 sessionStorage.setItem("uid", respJson.uid);
                 sessionStorage.setItem("firstname", respJson.firstname);
                 sessionStorage.setItem("lastname", respJson.lastname);
+                sessionStorage.setItem("username", respJson.username);
+                sessionStorage.setItem("password", respJson.password);
+                sessionStorage.setItem("email",respJson.email);
                 sessionStorage.setItem("rid", respJson.rid);
-                // sessionStorage.setItem("curUser",JSON.stringify(resp.body));
-                // let s = sessionStorage.getItem("lastname");
                 
+                console.log(sessionStorage.getItem("uid"));
+
                 // console.log(s);
                 console.log(resp.status);
                 if(resp.status == 211){

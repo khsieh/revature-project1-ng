@@ -8,6 +8,7 @@ export class UserByIdService {
     constructor(private httpClient:HttpClient) { }
 
     viewUserByID(){
-        return this.httpClient.post(this.url,{},{ responseType: 'text', observe: 'response' });
+        let uid =sessionStorage.getItem("uid");
+        return this.httpClient.post(this.url,{uid},{ responseType: 'text', observe: 'response' });
     }
 }
