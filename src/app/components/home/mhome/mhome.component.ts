@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mhome.component.css']
 })
 export class MhomeComponent implements OnInit {
+    
+    fname = sessionStorage.getItem("firstname");
+    
+    constructor() { }
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+    ngOnInit() {
+    }
 
 }

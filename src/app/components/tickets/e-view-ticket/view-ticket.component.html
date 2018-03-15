@@ -3,13 +3,13 @@
         <app-e-nav></app-e-nav>
     </div>
 
-    <div class="col-md-11" ><br>
+    <div class="col-md-10" ><br><br>
         <div class="container-fluid">
             <div class="panel panel-default">
                 <table class="table">
                     <thead class="thead-dark">
                         <tr>
-                        <th scope="col">Ticket ID</th>
+                        <!-- <th scope="col">Ticket ID</th> -->
                         <th scope="col">Amount</th>
                         <th scope="col">Description</th>
                         <th scope="col">Date Submitted</th>
@@ -22,11 +22,11 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let t of tableContent">
-                            <th scope="row">{{t.reimburseID}}</th>
-                            <td>{{t.amount}}</td>
+                            <!-- <th scope="row">{{t.reimburseID}}</th> -->
+                            <td scope="row">{{t.amount | currency}}</td>
                             <td>{{t.description}}</td>
-                            <td>{{t.submitted}}</td>
-                            <td>{{t.resolved}}</td>
+                            <td>{{t.submitted | date:'dd-MM-yyyy'}}</td>
+                            <td>{{t.resolved | date:'dd-MM-yyyy'}}</td>
                             <td>{{t.author}}</td>
                             <td>{{t.resolver}}</td>
                             <td>{{t.rType}}</td>
@@ -37,5 +37,6 @@
             </div>
         </div>
     </div>
+    <div class="col-md-1"></div>
 </div>
             

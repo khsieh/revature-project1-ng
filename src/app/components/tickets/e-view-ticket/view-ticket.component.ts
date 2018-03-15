@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { TixByUidService } from '../../../services/get/tickets/tix-by-uid/tix-by-uid.service';
 import { Observable } from 'rxjs/Observable';
 
@@ -10,11 +9,10 @@ import { Observable } from 'rxjs/Observable';
 })
 export class ViewTicketComponent implements OnInit {
 
-    cols = ["reimburseID", "amount", "description", "submitted", "resolved", "author","resolver","type","status"];
+    // cols = ["reimburseID", "amount", "description", "submitted", "resolved", "author","resolver","type","status"];
     tableContent=[];
-    sub;
 
-    constructor(private viewService:TixByUidService, private router:Router) { }
+    constructor(private viewService:TixByUidService) { }
 
     ngOnInit() {
         this.generateCallAll();
@@ -24,19 +22,13 @@ export class ViewTicketComponent implements OnInit {
 
         let uid = sessionStorage.getItem("uid");
         let type = "all";
-        this.sub = this.viewService.send(type,uid).subscribe(
+        let sub = this.viewService.send(type,uid).subscribe(
             resp=>{
-                // console.log(resp.status);
-                // console.log("resp body: " + resp.body);
                 let rbody = JSON.parse(resp.body);
-                // this.tableContent = rbody.tickets;
                 console.log(rbody.tickets);
                 Array.prototype.forEach.call(rbody.tickets,element=>{
-                // rbody.tickets.array.forEach(element => {
                     element["rStatus"]=this.convertStatus(element["rStatus"]);
-                    element["rType"]=this.convertStatus(element["rType"]);
-                    // let e = JSON.parse(element);
-                    // console.log(e);
+                    element["rType"]=this.convertType(element["rType"]);
                     this.tableContent.push(element);
                 });
             },

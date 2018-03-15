@@ -1,11 +1,36 @@
 <div class="row">
-    <div class="col-sm-4 col-2">
+    <div class="col-md-1">
         <app-m-nav></app-m-nav>
     </div>
-    
-    <div class="col-sm-6 col-10" >
+
+    <div class="col-md-10" ><br><br>
         <div class="container-fluid">
-            <!--Home Content here-->
+            <div class="panel panel-default">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                        <th scope="col">user ID</th>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">username</th>
+                        <th scope="col">email</th>
+                        <th scope="col">Role</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let u of users">
+                            <td scope="row">{{u.userID}}</td>
+                            <td>{{u.firstName}}</td>
+                            <td>{{u.lastName}}</td>
+                            <td>{{u.username}}</td>
+                            <td>{{u.email}}</td>
+                            <td>{{u.role}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
+    <div class="col-md-1"></div>
 </div>
+            

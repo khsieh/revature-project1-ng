@@ -1,12 +1,42 @@
 <div class="row">
-    <div class="col-sm-4 col-2">
+    <div class="col-md-1">
         <app-m-nav></app-m-nav>
     </div>
-    
-    <div class="col-sm-6 col-10" >
+
+    <div class="col-md-10" ><br><br>
         <div class="container-fluid">
-            <!--Home Content here-->
+            <div class="panel panel-default">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                        <!-- <th scope="col">Ticket ID</th> -->
+                        <th scope="col">Amount</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Date Submitted</th>
+                        <th scope="col">Date Resolved</th>
+                        <th scope="col">Author</th>
+                        <th scope="col">Resolver</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let t of tickets">
+                            <!-- <th scope="row">{{t.reimburseID}}</th> -->
+                            <td scope="row">{{t.amount}}</td>
+                            <td>{{t.description}}</td>
+                            <td>{{t.submitted}}</td>
+                            <td>{{t.resolved}}</td>
+                            <td>{{t.author}}</td>
+                            <td>{{t.resolver}}</td>
+                            <td>{{t.rType}}</td>
+                            <td (click)="approveTicket(t)">{{t.rStatus}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
+    <div class="col-md-1"></div>
 </div>
-    
+            
