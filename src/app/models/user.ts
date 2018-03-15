@@ -1,6 +1,3 @@
-import { Injectable } from '@angular/core';
-
-@Injectable()
 export class User {
 	userID:number;
     username:string;
@@ -9,7 +6,8 @@ export class User {
 	lastName:string;
 	email:string;
     role:string;
-    
+
+    /*
 	constructor($userID: number, $username: string, $password: string, $firstName: string, $lastName: string, $email: string, $role: string) {
 		this.userID = $userID;
 		this.username = $username;
@@ -18,7 +16,10 @@ export class User {
 		this.lastName = $lastName;
 		this.email = $email;
 		this.role = $role;
-	}
+    }*/
+    constructor(){
+        
+    }
     
 
 	public get $userID(): number {

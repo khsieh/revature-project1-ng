@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EhomeComponent implements OnInit {
 
+    fname = sessionStorage.getItem("firstname");
 
     constructor() { }
 

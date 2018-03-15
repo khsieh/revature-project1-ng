@@ -9,8 +9,9 @@ export class InsertTicketService {
     
     constructor(private httpClient:HttpClient) { }
 
-    insertTicket(ticket:Ticket){
-        this.httpClient.put(this.url,{type:"submit","ticket":ticket});
+    insertTicket(t:Ticket){
+        console.log("In insert Ticket");
+        return this.httpClient.put(this.url,{type:"submit",ticket:t},{ responseType: 'text', observe: 'response' });
     }
 
 }

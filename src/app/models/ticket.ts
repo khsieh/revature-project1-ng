@@ -1,6 +1,3 @@
-import { Injectable } from '@angular/core';
-
-@Injectable()
 export class Ticket {
     rID:number;
     amount:number;
@@ -13,7 +10,9 @@ export class Ticket {
     type:number;
     status:number;
 
-
+    constructor() {
+	}
+    /*
 	constructor($rID: number, $amount: number, $description: string, $receipt: string, $submitted: string, $resolved: string, $author: number, $resolver: number, $type: number, $status: number) {
 		this.rID = $rID;
 		this.amount = $amount;
@@ -26,7 +25,7 @@ export class Ticket {
 		this.type = $type;
 		this.status = $status;
 	}
-    
+    */
 
 	public get $rID(): number {
 		return this.rID;
