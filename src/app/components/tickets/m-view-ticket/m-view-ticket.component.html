@@ -23,10 +23,10 @@
                     <tbody>
                         <tr *ngFor="let t of tickets">
                             <!-- <th scope="row">{{t.reimburseID}}</th> -->
-                            <td scope="row">{{t.amount}}</td>
+                            <td scope="row">{{t.amount | currency}}</td>
                             <td>{{t.description}}</td>
-                            <td>{{t.submitted}}</td>
-                            <td>{{t.resolved}}</td>
+                            <td>{{t.submitted | date: 'dd-MM-yyyy'}}</td>
+                            <td>{{t.resolved | date: 'dd-MM-yyyy'}}</td>
                             <td>{{t.author}}</td>
                             <td>{{t.resolver}}</td>
                             <td>{{t.rType}}</td>

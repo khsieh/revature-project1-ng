@@ -31,8 +31,8 @@ export class SubmitTicketComponent implements OnInit {
         this.ticket.receipt = this.receipt;
         let authorID = sessionStorage.getItem("uid");   
         this.ticket.author = parseInt(authorID);//get from localstorage
-        this.ticket.type = this.selectedType;
-        // console.log(this.selectedType);
+        this.ticket.rType = this.selectedType;
+        console.log(this.ticket);
         this.ticket.status = 1;
         //these will be default when sent
         this.ticket.rID=0;

@@ -7,7 +7,7 @@ export class Ticket {
     resolved:string;//date
     author:number;
     resolver:number;
-    type:number;
+    rType:number;
     status:number;
 
     constructor() {
@@ -91,12 +91,12 @@ export class Ticket {
 		this.resolver = value;
 	}
 
-	public get $type(): number {
-		return this.type;
+	public get $rType(): number {
+		return this.rType;
 	}
 
-	public set $type(value: number) {
-		this.type = value;
+	public set $rType(value: number) {
+		this.rType = value;
 	}
 
 	public get $status(): number {
